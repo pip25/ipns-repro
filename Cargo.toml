@@ -1,0 +1,17 @@
+[package]
+name = "ipns-repro"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+env_logger = "0.11.8"
+tokio = { version = "1", features = ["full"] }
+libp2p = { version = "0.56", features = [
+    "identify", "noise", "tls", "tcp", "yamux", "macros", "autonat",
+    "tokio", "dns", "quic", "websocket", "kad", "dcutr", "relay", "serde"
+] }
+clap = { version = "4.5.41", features = ["cargo", "derive", "help"] }
+rust-ipns = { git = "https://github.com/pip25/rust-ipfs",  branch  = "ipns-record-format-fixes", features = [
+    "libp2p"] }
+chrono = "0.4.41"
+cid = "0.11.1"
